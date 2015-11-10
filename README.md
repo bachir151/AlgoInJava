@@ -1,2 +1,2 @@
 # AlgoInJava   
-Here are some useful algorithm in Java 
+Here are some useful algorithms in Java 
