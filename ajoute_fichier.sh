@@ -2,7 +2,7 @@
 if [ $# -lt 0 ]
 then
    echo ""
-   echo "Usage: ajoute_fichier.sh [fichier1] [fichier2]  [commit] "
+   echo "Usage: ajoute_fichier.sh [fichier]  [commit] "
    echo ""
  exit 1
 fi
