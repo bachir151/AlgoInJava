@@ -43,7 +43,7 @@ Sa<-function (N,Y_M,S_2v,g,b){
   #X
   
   s_A_tild<-t(Y_M)%*%S_diag_puissance%*%(I-S_diag_puissance%*%X%*%(ginv(t(X)%*%S_inv%*%X))%*%t(X)%*%S_diag_puissance)%*%S_diag_puissance%*%Y_M
-  s_A_tild 
+  s_A_tild
 }
 ######################################################"
 #Algorithm1
@@ -62,13 +62,13 @@ for(k in 1:m){ #~~~~~~~~~
     chi<-rchisq(1,N[i]-1)
     S_MB[i]<-S_2v[i]*chi/(N[i]-1) # S_Bij ~chiDeux
   }################
-#Calcul S_AB
-Sab<-Sa(N,Y_M,S_MB,g,b) 
+  
+Sab<-Sa(N,Y_M,S_MB,g,b) #Calcul S_AB
 
 if (Sab>sa){Q[k]<-1} else {Q[k]<-0 }
 } #~~~~~~~~~~~~~~~~
 pvalue<-sum(Q)/m
-print(pvalue)
+return(pvalue)
 }
 
 g<-3
@@ -82,11 +82,12 @@ Y_M<-rbind(7.5,8.3,12.4,5.9,6.4,5.7)
 S_2v<-cbind(1.01,1.25,1.15,1.09,1.10,0.99)
 #S_2v
 m<-1000
- R<-cbind(rep(1,m))
+Pv<-cbind(rep(1,m))
 for (j in 1:10){
-R[j]<-algorithm1(N,Y_M,S_2v,g,b,m)
+Pv[j]<-algorithm1(N,Y_M,S_2v,g,b,m)
 }
-R
+mean(Pv)
+algorithm1(N,Y_M,S_2v,g,b,m)
 #algorithm1(N,Y_M,S_2v,g,b,m)
 
 ####
