@@ -43,7 +43,7 @@ Sa<-function (N,Y_M,S_2v,g,b){
   #X
   
   s_A_tild<-t(Y_M)%*%S_diag_puissance%*%(I-S_diag_puissance%*%X%*%(ginv(t(X)%*%S_inv%*%X))%*%t(X)%*%S_diag_puissance)%*%S_diag_puissance%*%Y_M
-  s_A_tild
+  s_A_tild 
 }
 ######################################################"
 #Algorithm1
